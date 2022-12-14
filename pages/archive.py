@@ -6,6 +6,7 @@ import calendar
 import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
+
 land_50m = cfeature.NaturalEarthFeature('physical', 'land', '50m')
 
 st.header('Proxy SIT in Canadian Arctic')
@@ -54,9 +55,9 @@ if password=='Bristol':
         st.sidebar.write('Select starting and end year and month to plot')
         m = st.sidebar.select_slider('Month', options=([11,12,1,2,3,4]), help='Select a month to display')
         if m<4:
-            year_1,year_2 = st.sidebar.select_slider('Range years (1993-2020)', options=(np.arange(1993,2021,1)), value=[1993,2020], help='Select a starting and ending year for your trend plot')  
+            year_1,year_2 = st.sidebar.select_slider('Range years (1993-2020)', options=(np.arange(1993,2021,1)), value=[1993,2020], help='Select a starting and ending year for your trend plot')
         else:
-            year_1, year_2 = st.sidebar.select_slider('Range years (1992-2020)', options=(np.arange(1992,2021,1)), value=[1992,2020], help='Select a starting and ending year for your trend plot') 
+            year_1, year_2 = st.sidebar.select_slider('Range years (1992-2020)', options=(np.arange(1992,2021,1)), value=[1992,2020], help='Select a starting and ending year for your trend plot')
 
         direc = './data/'
         sit = xr.open_dataset(direc+'predic_sit_19932020_'+f"{m:02}"+'.nc')

@@ -1,4 +1,5 @@
 numpy
+eccodes
 xarray[io]
 scipy
 matplotlib

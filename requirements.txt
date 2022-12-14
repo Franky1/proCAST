@@ -1,5 +1,5 @@
 numpy
-xarray
+xarray[netCDF4]
 scipy
 matplotlib
 shapely
